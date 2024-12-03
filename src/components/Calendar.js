@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Calendar.css';
+import AddEventForm from './AddEventForm';
 
-const Calendar = ({ events }) => {
+const Calendar = ({ events, addEvent }) => {
   const navigate = useNavigate();
-  const [currentDate, setCurrentDate] = useState(new Date(2024, 10, 1));
+  const [currentDate, setCurrentDate] = useState(new Date(2024, 10, 1)); // Standardmäßig November 2024
 
   const daysInMonth = (month, year) => new Date(year, month + 1, 0).getDate();
 
@@ -41,6 +42,7 @@ const Calendar = ({ events }) => {
         </h2>
         <button onClick={() => changeMonth(1)}>→</button>
       </div>
+      <AddEventForm currentDate={currentDate} addEvent={addEvent} />
       <div className="calendar">
         {days.map((day) => {
           const eventsForDay = getEventsForDay(day);
