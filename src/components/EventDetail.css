@@ -1,13 +1,26 @@
 div {
-  padding: 20px;
-  border: 1px solid #ccc;
-  margin: 20px auto;
-  max-width: 80%;
-  background: #f0f0f0;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  max-width: 100%; /* Passt sich an den Bildschirm an */
+  padding: 10px;
+  margin: 10px auto;
+  font-size: 14px;
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
+/* Anpassung für Tablets */
+@media (max-width: 768px) {
+  div {
+    font-size: 12px; /* Kleinere Schrift */
+    padding: 8px;
+  }
+}
+
+/* Anpassung für Smartphones */
+@media (max-width: 480px) {
+  div {
+    font-size: 10px; /* Noch kleinere Schrift für Lesbarkeit */
+    padding: 5px;
+  }
+
+  h2 {
+    font-size: 16px; /* Überschrift verkleinern */
+  }
 }

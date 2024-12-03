@@ -1,6 +1,7 @@
+/* Hauptlayout für den Kalender */
 .calendar {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, 1fr); /* Standard: 7 Spalten */
   gap: 15px;
   padding: 20px;
 }
@@ -8,8 +9,8 @@
 .calendar-day {
   border: 1px solid #ccc;
   padding: 20px;
-  width: 80px; /* Etwas breiter für Spielinfos */
-  height: 80px; /* Etwas höher für zusätzlichen Platz */
+  width: 80px; /* Breite für Desktop */
+  height: 80px; /* Höhe für Desktop */
   text-align: center;
   position: relative;
   display: flex;
@@ -89,4 +90,61 @@
   background-color: #004080;
 }
 
+/* ----------- Responsiveness ----------- */
 
+/* Anpassungen für Tablets (Breite ≤ 768px) */
+@media (max-width: 768px) {
+  .calendar {
+    grid-template-columns: repeat(4, 1fr); /* 4 Spalten */
+  }
+
+  .calendar-day {
+    width: 70px;
+    height: 70px;
+    font-size: 12px;
+  }
+
+  .event-details {
+    font-size: 10px;
+  }
+
+  .calendar-header h2 {
+    font-size: 20px;
+  }
+
+  .calendar-header button {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+}
+
+/* Anpassungen für Smartphones (Breite ≤ 480px) */
+@media (max-width: 480px) {
+  .calendar {
+    grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
+    gap: 10px;
+  }
+
+  .calendar-day {
+    width: 60px;
+    height: 60px;
+    font-size: 10px;
+  }
+
+  .day-number {
+    font-size: 14px; /* Tagesnummer verkleinern */
+  }
+
+  .event-details {
+    font-size: 10px; /* Schriftgröße der Details anpassen */
+  }
+
+  .calendar-header h2 {
+    font-size: 18px;
+  }
+
+  .calendar-header button {
+    font-size: 10px;
+    padding: 5px 6px;
+  }
+}
