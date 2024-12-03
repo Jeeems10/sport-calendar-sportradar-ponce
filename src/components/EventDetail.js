@@ -1,14 +1,19 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import './EventDetail.css'
+import './EventDetail.css';
 
 const EventDetail = ({ events }) => {
   const { eventId } = useParams();
-  const event = events[eventId];
-
+  const [day, index] = eventId.split('-');
+  const event = events.find(
+    (event, idx) =>
+      `${new Date(event.dateVenue).getDate()}-${idx}` === eventId
+  );
+  
   if (!event) {
     return <h2>Event not found</h2>;
   }
+  
 
   return (
     <div>
@@ -27,5 +32,6 @@ const EventDetail = ({ events }) => {
     </div>
   );
 };
+
 
 export default EventDetail;
