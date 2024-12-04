@@ -40,7 +40,7 @@ function App() {
             path="/add-event"
             element={<AddEventPage addEvent={addEvent} currentDate={new Date()} />}
           />
-          <Route path="/event/:eventId" element={<EventDetail events={events} />} />
+          <Route path="/event/:eventIds" element={<EventDetail events={events} />} />
         </Routes>
       </div>
     </Router>

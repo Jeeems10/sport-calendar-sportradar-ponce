@@ -1,26 +1,85 @@
-div {
+.event-detail-container {
   max-width: 100%; /* Passt sich an den Bildschirm an */
-  padding: 10px;
-  margin: 10px auto;
+  margin: 20px auto;
+  text-align: center; /* Zentriert den Container-Inhalt */
+}
+
+.event-detail-container h2 {
+  font-size: 24px; /* Standardgröße für die Überschrift */
+  margin-bottom: 20px;
+}
+
+/* Flexibles Layout für mehrere Events */
+.event-detail-grid {
+  display: flex;
+  justify-content: center; /* Zentriert die Karten */
+  gap: 20px; /* Abstand zwischen den Karten */
+  flex-wrap: wrap; /* Ermöglicht Zeilenumbruch bei kleineren Bildschirmen */
+  margin-top: 20px;
+}
+
+.event-detail-grid.single-event {
+  justify-content: center; /* Zentriert ein einzelnes Event */
+}
+
+.event-card {
+  background-color: #f9f9f9; /* Heller Hintergrund */
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Runde Ecken */
+  padding: 15px;
+  width: 250px; /* Feste Breite für Konsistenz */
+  text-align: left; /* Details linksbündig */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+}
+
+.event-card h3 {
+  text-align: center; /* Titel wie "Game 1" zentriert */
+  margin-bottom: 10px;
+  color: #002c5f; /* Sportradar Blau */
+}
+
+.event-card p {
+  margin: 5px 0; /* Abstand zwischen den Textzeilen */
   font-size: 14px;
+  color: #444;
 }
 
-/* Anpassung für Tablets */
+/* ----------- Anpassungen für Tablets ----------- */
 @media (max-width: 768px) {
-  div {
-    font-size: 12px; /* Kleinere Schrift */
-    padding: 8px;
+  .event-card {
+    width: 200px; /* Verkleinert die Kartenbreite */
+    padding: 10px; /* Weniger Padding */
+  }
+
+  .event-card h3 {
+    font-size: 18px; /* Kleinere Titelgröße */
+  }
+
+  .event-card p {
+    font-size: 12px; /* Kleinere Schriftgröße für Details */
+  }
+
+  .event-detail-container h2 {
+    font-size: 20px; /* Kleinere Überschrift */
   }
 }
 
-/* Anpassung für Smartphones */
+/* ----------- Anpassungen für Smartphones ----------- */
 @media (max-width: 480px) {
-  div {
-    font-size: 10px; /* Noch kleinere Schrift für Lesbarkeit */
-    padding: 5px;
+  .event-card {
+    width: 150px; /* Noch kleinere Kartenbreite */
+    padding: 8px; /* Weniger Padding */
   }
 
-  h2 {
-    font-size: 16px; /* Überschrift verkleinern */
+  .event-card h3 {
+    font-size: 16px; /* Kleinere Titelgröße */
+  }
+
+  .event-card p {
+    font-size: 10px; /* Kleinere Schriftgröße für Details */
+  }
+
+  .event-detail-container h2 {
+    font-size: 16px; /* Verkleinerte Überschrift */
   }
 }

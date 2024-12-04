@@ -29,8 +29,10 @@ const Calendar = ({ events, filteredEvents, setFilteredEvents }) => {
   };
 
   const handleDayClick = (eventsForDay) => {
-    navigate(`/event/${eventsForDay[0].id}`);
+    const eventIds = eventsForDay.map((event) => event.id).join(",");
+    navigate(`/event/${eventIds}`);
   };
+  
 
   const days = Array.from(
     { length: daysInMonth(currentDate.getMonth(), currentDate.getFullYear()) },
