@@ -1,0 +1,41 @@
+/* Stil für das Filter-Formular */
+.filter-form {
+  display: flex;
+  flex-wrap: wrap; /* Eingabefelder umbrechen, wenn kein Platz ist */
+  align-items: center;
+  justify-content: center; /* Zentriert die Eingabefelder */
+  gap: 15px; /* Abstand zwischen den Feldern */
+  margin: 20px 0; /* Abstand oberhalb und unterhalb des Formulars */
+}
+
+/* Eingabefelder und Buttons */
+.filter-form input[type="date"],
+.filter-form select,
+.filter-form button {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Button-Stil */
+.filter-form button {
+  background-color: #002c5f; /* Sportradar Blau */
+  color: white;
+  cursor: pointer;
+}
+
+.filter-form button:hover {
+  background-color: #004080; /* Helleres Blau beim Hover */
+  color: red;
+}
+
+/* Label-Abstände */
+.filter-form label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}

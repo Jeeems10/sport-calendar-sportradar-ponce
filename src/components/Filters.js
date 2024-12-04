@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './Filter.css'
 
 const Filters = ({ events = [], setFilteredEvents }) => {
   const [filterCriteria, setFilterCriteria] = useState({
@@ -50,8 +51,7 @@ const Filters = ({ events = [], setFilteredEvents }) => {
   };
 
   return (
-    <div>
-      <h3>Filter Events</h3>
+    <div className="filter-form">
       <label>
         Sport:
         <select

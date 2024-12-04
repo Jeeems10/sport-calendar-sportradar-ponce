@@ -1,0 +1,51 @@
+.add-event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Abstand zwischen den Elementen */
+  max-width: 600px;
+  margin: 0 auto; /* Zentriert das Formular */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Halbtransparenter Hintergrund */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-event-form h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #002c5f;
+}
+
+.add-event-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #444;
+  font-weight: bold;
+}
+
+.add-event-form input,
+.add-event-form select {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.add-event-form button {
+  background-color: #002c5f;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.add-event-form button:hover {
+  background-color: #004080;
+  color: red;
+}

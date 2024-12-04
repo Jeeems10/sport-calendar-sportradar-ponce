@@ -99,6 +99,7 @@
 
 .calendar-header button:hover {
   background-color: #004080;
+  color: red;
 }
 
 /* ----------- Event Details für Tage mit Spielen ----------- */
