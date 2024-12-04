@@ -29,7 +29,7 @@ function App() {
             path="/"
             element={
               <Calendar
-                // events={events}
+                 events={events}
                 addEvent={addEvent}
                 filteredEvents={filteredEvents}
                 setFilteredEvents={setFilteredEvents}

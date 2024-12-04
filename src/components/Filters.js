@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Filters = ({ events, setFilteredEvents }) => {
+const Filters = ({ events = [], setFilteredEvents }) => {
   const [filterCriteria, setFilterCriteria] = useState({
     sport: "",
     dateFrom: "",
@@ -8,18 +8,44 @@ const Filters = ({ events, setFilteredEvents }) => {
   });
 
   const handleFilter = () => {
-    const filtered = events.filter((event) => {
-      const eventDate = new Date(event.dateVenue);
-      const fromDate = filterCriteria.dateFrom ? new Date(filterCriteria.dateFrom) : null;
-      const toDate = filterCriteria.dateTo ? new Date(filterCriteria.dateTo) : null;
+    console.log("Applying filter with criteria:", filterCriteria);
+    console.log("Original events:", events);
 
-      return (
-        (!filterCriteria.sport ||
-          event.sport.toLowerCase() === filterCriteria.sport.toLowerCase()) &&
-        (!fromDate || eventDate >= fromDate) &&
-        (!toDate || eventDate <= toDate)
-      );
+    if (!events || !Array.isArray(events)) {
+      console.error("Events are undefined or not an array");
+      setFilteredEvents([]);
+      return;
+    }
+
+    const filtered = events.filter((event) => {
+      if (!event.dateVenue || !event.sport) {
+        console.error("Invalid event:", event);
+        return false;
+      }
+
+      const eventDate = new Date(event.dateVenue);
+      const fromDate = filterCriteria.dateFrom
+        ? new Date(`${filterCriteria.dateFrom}T00:00:00`)
+        : null;
+      const toDate = filterCriteria.dateTo
+        ? new Date(`${filterCriteria.dateTo}T23:59:59`)
+        : null;
+
+      const matchesSport = !filterCriteria.sport || event.sport.toLowerCase() === filterCriteria.sport.toLowerCase();
+      const matchesFromDate = !fromDate || eventDate >= fromDate;
+      const matchesToDate = !toDate || eventDate <= toDate;
+
+      console.log({
+        event: event.dateVenue,
+        matchesSport,
+        matchesFromDate,
+        matchesToDate,
+      });
+
+      return matchesSport && matchesFromDate && matchesToDate;
     });
+
+    console.log("Filtered events:", filtered);
     setFilteredEvents(filtered);
   };
 
@@ -66,5 +92,6 @@ const Filters = ({ events, setFilteredEvents }) => {
     </div>
   );
 };
+
 
 export default Filters;
