@@ -4,7 +4,7 @@
 
 .App h1 {
   text-align: center; /* Zentriert nur das h1-Element */
-  margin-top: 20px; /* Optional, fügt oben etwas Abstand hinzu */
+  margin-top: 10px; /* Optional, fügt oben etwas Abstand hinzu */
   margin-bottom: 10px; /* Optional, fügt unten Abstand hinzu */
   font-size: 2rem;
 }

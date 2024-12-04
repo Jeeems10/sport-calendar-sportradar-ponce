@@ -77,7 +77,7 @@ const Calendar = ({ events, filteredEvents, setFilteredEvents }) => {
                 <ul className="event-list">
                   {eventsForDay.map((event, index) => (
                     <li key={index} className="event-item">
-                      {event.homeTeam?.name || "TBD"} vs. {event.awayTeam?.name || "TBD"}
+                      {event.homeTeam?.name || "Unknown"} vs. {event.awayTeam?.name || "Unknown"}
                     </li>
                   ))}
                 </ul>
