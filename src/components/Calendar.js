@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Calendar.css';
 import AddEventForm from './AddEventForm';
+import Filters from './Filters';
 
-const Calendar = ({ events, addEvent }) => {
+const Calendar = ({ events, addEvent, filteredEvents, setFilteredEvents }) => {
   const navigate = useNavigate();
-  const [currentDate, setCurrentDate] = useState(new Date(2024, 10, 1)); // Standardmäßig November 2024
+  const [currentDate, setCurrentDate] = useState(new Date(2024, 10, 1)); // Standard: November 2024
 
   const daysInMonth = (month, year) => new Date(year, month + 1, 0).getDate();
 
@@ -18,7 +19,7 @@ const Calendar = ({ events, addEvent }) => {
   };
 
   const getEventsForDay = (day) => {
-    return events.filter((event) => {
+    return filteredEvents.filter((event) => {
       const eventDate = new Date(event.dateVenue);
       return (
         eventDate.getDate() === day &&
@@ -26,6 +27,10 @@ const Calendar = ({ events, addEvent }) => {
         eventDate.getFullYear() === currentDate.getFullYear()
       );
     });
+  };
+
+  const handleDayClick = (eventsForDay) => {
+    navigate(`/event/${eventsForDay[0].id}`);
   };
 
   const days = Array.from(
@@ -43,6 +48,7 @@ const Calendar = ({ events, addEvent }) => {
         <button onClick={() => changeMonth(1)}>→</button>
       </div>
       <AddEventForm currentDate={currentDate} addEvent={addEvent} />
+      <Filters events={events} setFilteredEvents={setFilteredEvents} />
       <div className="calendar">
         {days.map((day) => {
           const eventsForDay = getEventsForDay(day);
@@ -52,7 +58,7 @@ const Calendar = ({ events, addEvent }) => {
             <div
               key={day}
               className={`calendar-day ${hasEvent ? 'event-day' : ''}`}
-              onClick={hasEvent ? () => navigate(`/event/${day}-${events.indexOf(eventsForDay[0])}`) : null}
+              onClick={hasEvent ? () => handleDayClick(eventsForDay) : null}
             >
               <span>{day}</span>
             </div>
