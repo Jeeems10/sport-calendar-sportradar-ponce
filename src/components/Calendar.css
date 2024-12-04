@@ -15,9 +15,9 @@
   display: flex;
   flex-direction: column; /* Vertikales Layout */
   align-items: center;
-  justify-content: center; /* Inhalte oben ausrichten */
+  justify-content: center; /* Inhalte zentrieren */
   cursor: pointer;
-  background-color: #f9f9f9; /* Leichter Hintergrund für bessere Lesbarkeit */
+  background-color: rgba(255, 255, 255, 0.8); /* Halbtransparentes Weiß */
   border-radius: 5px; /* Abgerundete Ecken */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
   position: relative;
@@ -25,7 +25,7 @@
 }
 
 .calendar-day.event-day {
-  background-color: #002c5f; /* Blau für Tage mit Events */
+  background-color: rgba(0, 44, 95, 0.8); /* Blau mit Transparenz */
   color: white;
   border: none;
 }
@@ -55,14 +55,23 @@
   font-weight: bold;
 }
 
-/* ----------- Header und Navigation ----------- */
+/* ----------- Hintergrund mit Transparenz ----------- */
 .calendar-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.8), 
+      rgba(255, 255, 255, 0.8)
+    ), 
+    url('../../public/images/footballStadium.png') no-repeat center center fixed;
+  background-size: cover;
+  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Leichter Schatten */
+  padding: 20px;
 }
 
+/* ----------- Header und Navigation ----------- */
 .calendar-header {
   display: flex;
   align-items: center;
@@ -98,7 +107,7 @@
   padding: 5px;
   font-size: 10px;
   color: #444;
-  background-color: #eaf2f8; /* Heller Hintergrund für Lesbarkeit */
+  background-color: rgba(255, 255, 255, 0.8); /* Halbtransparentes Weiß */
   border-radius: 3px;
   text-align: left;
 }

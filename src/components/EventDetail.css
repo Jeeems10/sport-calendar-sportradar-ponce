@@ -1,45 +1,53 @@
 .event-detail-container {
-  max-width: 100%; /* Passt sich an den Bildschirm an */
-  margin: 20px auto;
-  text-align: center; /* Zentriert den Container-Inhalt */
+  max-width: 100%;
+  height: 100vh;
+  text-align: center;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.8), 
+      rgba(255, 255, 255, 0.8)
+    ), 
+    url('../../public/images/footballStadium.png') no-repeat center center fixed;
+  background-size: cover;
+  padding: 20px;
 }
 
 .event-detail-container h2 {
-  font-size: 24px; /* Standardgröße für die Überschrift */
+  font-size: 24px;
   margin-bottom: 20px;
+  color: #002c5f; /* Sportradar Blau */
 }
 
 /* Flexibles Layout für mehrere Events */
 .event-detail-grid {
   display: flex;
-  justify-content: center; /* Zentriert die Karten */
-  gap: 20px; /* Abstand zwischen den Karten */
-  flex-wrap: wrap; /* Ermöglicht Zeilenumbruch bei kleineren Bildschirmen */
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
   margin-top: 20px;
 }
 
 .event-detail-grid.single-event {
-  justify-content: center; /* Zentriert ein einzelnes Event */
+  justify-content: center;
 }
 
 .event-card {
-  background-color: #f9f9f9; /* Heller Hintergrund */
+  background-color: rgba(255, 255, 255, 0.9); /* Halbtransparentes Weiß */
   border: 1px solid #ccc;
-  border-radius: 8px; /* Runde Ecken */
+  border-radius: 8px;
   padding: 15px;
-  width: 250px; /* Feste Breite für Konsistenz */
-  text-align: left; /* Details linksbündig */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+  width: 250px;
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .event-card h3 {
-  text-align: center; /* Titel wie "Game 1" zentriert */
+  text-align: center;
   margin-bottom: 10px;
-  color: #002c5f; /* Sportradar Blau */
+  color: #002c5f;
 }
 
 .event-card p {
-  margin: 5px 0; /* Abstand zwischen den Textzeilen */
+  margin: 5px 0;
   font-size: 14px;
   color: #444;
 }
@@ -47,39 +55,39 @@
 /* ----------- Anpassungen für Tablets ----------- */
 @media (max-width: 768px) {
   .event-card {
-    width: 200px; /* Verkleinert die Kartenbreite */
-    padding: 10px; /* Weniger Padding */
+    width: 200px;
+    padding: 10px;
   }
 
   .event-card h3 {
-    font-size: 18px; /* Kleinere Titelgröße */
+    font-size: 18px;
   }
 
   .event-card p {
-    font-size: 12px; /* Kleinere Schriftgröße für Details */
+    font-size: 12px;
   }
 
   .event-detail-container h2 {
-    font-size: 20px; /* Kleinere Überschrift */
+    font-size: 20px;
   }
 }
 
 /* ----------- Anpassungen für Smartphones ----------- */
 @media (max-width: 480px) {
   .event-card {
-    width: 150px; /* Noch kleinere Kartenbreite */
-    padding: 8px; /* Weniger Padding */
+    width: 150px;
+    padding: 8px;
   }
 
   .event-card h3 {
-    font-size: 16px; /* Kleinere Titelgröße */
+    font-size: 16px;
   }
 
   .event-card p {
-    font-size: 10px; /* Kleinere Schriftgröße für Details */
+    font-size: 10px;
   }
 
   .event-detail-container h2 {
-    font-size: 16px; /* Verkleinerte Überschrift */
+    font-size: 16px;
   }
 }
