@@ -38,6 +38,13 @@ const Calendar = ({ events, addEvent, filteredEvents, setFilteredEvents }) => {
     (_, i) => i + 1
   );
 
+  const getWeekday = (day) => {
+    const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
+    const weekday = date.toLocaleString('default', { weekday: 'short' }); // Kurzform von Wochentagen (z. B. Mo, Di)
+    const formattedDate = date.toLocaleDateString('de-DE', { day: 'numeric', month: 'numeric' }); // Formatiertes Datum
+    return { weekday, formattedDate };
+  };
+
   return (
     <div className="calendar-container">
       <div className="calendar-header">
@@ -53,6 +60,7 @@ const Calendar = ({ events, addEvent, filteredEvents, setFilteredEvents }) => {
         {days.map((day) => {
           const eventsForDay = getEventsForDay(day);
           const hasEvent = eventsForDay.length > 0;
+          const { weekday, formattedDate } = getWeekday(day);
 
           return (
             <div
@@ -60,7 +68,8 @@ const Calendar = ({ events, addEvent, filteredEvents, setFilteredEvents }) => {
               className={`calendar-day ${hasEvent ? 'event-day' : ''}`}
               onClick={hasEvent ? () => handleDayClick(eventsForDay) : null}
             >
-              <span>{day}</span>
+              <span className="weekday">{weekday}</span>
+              <span className="date">{formattedDate}</span>
             </div>
           );
         })}
