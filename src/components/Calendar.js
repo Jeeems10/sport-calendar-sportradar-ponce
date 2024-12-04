@@ -54,7 +54,7 @@ const Calendar = ({ events, addEvent, filteredEvents, setFilteredEvents }) => {
         </h2>
         <button onClick={() => changeMonth(1)}>→</button>
       </div>
-      <AddEventForm currentDate={currentDate} addEvent={addEvent} />
+      {/* <AddEventForm currentDate={currentDate} addEvent={addEvent} /> */}
       <Filters events={events} setFilteredEvents={setFilteredEvents} />
       <div className="calendar">
         {days.map((day) => {
