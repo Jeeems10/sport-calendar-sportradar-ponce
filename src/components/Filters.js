@@ -15,7 +15,7 @@ const Filters = ({ events, setFilteredEvents }) => {
 
       return (
         (!filterCriteria.sport ||
-          event.sport.toLowerCase().includes(filterCriteria.sport.toLowerCase())) &&
+          event.sport.toLowerCase() === filterCriteria.sport.toLowerCase()) &&
         (!fromDate || eventDate >= fromDate) &&
         (!toDate || eventDate <= toDate)
       );
@@ -28,18 +28,28 @@ const Filters = ({ events, setFilteredEvents }) => {
       <h3>Filter Events</h3>
       <label>
         Sport:
-        <input
-          type="text"
+        <select
           value={filterCriteria.sport}
-          onChange={(e) => setFilterCriteria({ ...filterCriteria, sport: e.target.value })}
-        />
+          onChange={(e) =>
+            setFilterCriteria({ ...filterCriteria, sport: e.target.value })
+          }
+        >
+          <option value="">Select Sport</option>
+          <option value="Basketball">Basketball</option>
+          <option value="Football">Football</option>
+          <option value="Hockey">Hockey</option>
+          <option value="Baseball">Baseball</option>
+          <option value="Cricket">Cricket</option>
+        </select>
       </label>
       <label>
         Date From:
         <input
           type="date"
           value={filterCriteria.dateFrom}
-          onChange={(e) => setFilterCriteria({ ...filterCriteria, dateFrom: e.target.value })}
+          onChange={(e) =>
+            setFilterCriteria({ ...filterCriteria, dateFrom: e.target.value })
+          }
         />
       </label>
       <label>
@@ -47,7 +57,9 @@ const Filters = ({ events, setFilteredEvents }) => {
         <input
           type="date"
           value={filterCriteria.dateTo}
-          onChange={(e) => setFilterCriteria({ ...filterCriteria, dateTo: e.target.value })}
+          onChange={(e) =>
+            setFilterCriteria({ ...filterCriteria, dateTo: e.target.value })
+          }
         />
       </label>
       <button onClick={handleFilter}>Apply Filter</button>
@@ -56,4 +68,3 @@ const Filters = ({ events, setFilteredEvents }) => {
 };
 
 export default Filters;
-

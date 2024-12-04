@@ -58,12 +58,18 @@ const AddEventForm = ({ currentDate, addEvent }) => {
       </label>
       <label>
         Sport:
-        <input
-          type="text"
+        <select
           name="sport"
           value={formData.sport}
           onChange={handleChange}
-        />
+        >
+          <option value="">Select Sport</option>
+          <option value="Basketball">Basketball</option>
+          <option value="Football">Football</option>
+          <option value="Hockey">Hockey</option>
+          <option value="Baseball">Baseball</option>
+          <option value="Cricket">Cricket</option>
+        </select>
       </label>
       <label>
         Home Team:
