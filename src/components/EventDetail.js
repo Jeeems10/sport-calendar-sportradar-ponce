@@ -23,11 +23,11 @@ const EventDetail = ({ events }) => {
           const homeTeam = event.homeTeam?.name || "Unknown";
           const awayTeam = event.awayTeam?.name || "Unknown";
 
-          // Zeitformat anpassen
+          
           const timeVenue =
             event.timeVenueUTC?.split(":").slice(0, 2).join(":") || "Unknown";
 
-          // Logik für "Draw"
+          
           const isDraw =
             event.result &&
             event.result.homeGoals === event.result.awayGoals;

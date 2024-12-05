@@ -5,7 +5,7 @@ import Filters from "./Filters";
 
 const Calendar = ({ events, filteredEvents, setFilteredEvents }) => {
   const navigate = useNavigate();
-  const [currentDate, setCurrentDate] = useState(new Date(2024, 10, 1)); // Standard: November 2024
+  const [currentDate, setCurrentDate] = useState(new Date(2024, 10, 1));
 
   const daysInMonth = (month, year) => new Date(year, month + 1, 0).getDate();
 
@@ -41,8 +41,8 @@ const Calendar = ({ events, filteredEvents, setFilteredEvents }) => {
 
   const getWeekday = (day) => {
     const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
-    const weekday = date.toLocaleString("default", { weekday: "short" }); // Kurzform von Wochentagen
-    const formattedDate = date.toLocaleDateString("de-DE", { day: "numeric", month: "numeric" }); // Formatiertes Datum
+    const weekday = date.toLocaleString("default", { weekday: "short" });
+    const formattedDate = date.toLocaleDateString("de-DE", { day: "numeric", month: "numeric" });
     return { weekday, formattedDate };
   };
 
@@ -68,11 +68,11 @@ const Calendar = ({ events, filteredEvents, setFilteredEvents }) => {
               className={`calendar-day ${hasEvent ? "event-day" : ""}`}
               onClick={hasEvent ? () => handleDayClick(eventsForDay) : null}
             >
-              {/* Wochentag */}
+              
               <span className="weekday">{weekday}</span>
-              {/* Datum */}
+              
               <span className="date">{formattedDate}</span>
-              {/* Spiele */}
+              
               {hasEvent && (
                 <ul className="event-list">
                   {eventsForDay.map((event, index) => (

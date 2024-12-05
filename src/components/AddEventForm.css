@@ -1,11 +1,11 @@
 .add-event-form {
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Abstand zwischen den Elementen */
+  gap: 15px;
   max-width: 600px;
-  margin: 0 auto; /* Zentriert das Formular */
+  margin: 0 auto;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8); /* Halbtransparenter Hintergrund */
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -52,45 +52,45 @@
 
 /* ----------- Media Queries ----------- */
 
-/* Für Tablets (Breite: bis 768px) */
+/* For Tablets */
 @media (max-width: 768px) {
   .add-event-form {
-    max-width: 90%; /* Nimmt 90% des Bildschirms ein */
-    padding: 15px; /* Weniger Padding */
+    max-width: 90%;
+    padding: 15px;
   }
 
   .add-event-form h3 {
-    font-size: 18px; /* Kleinere Schriftgröße */
+    font-size: 18px;
   }
 
   .add-event-form input,
   .add-event-form select,
   .add-event-form button {
-    font-size: 13px; /* Kleinere Schrift für Inputs und Buttons */
+    font-size: 13px; 
     padding: 8px;
   }
 }
 
-/* Für Smartphones (Breite: bis 480px) */
+/* For Smartphones */
 @media (max-width: 480px) {
   .add-event-form {
-    max-width: 100%; /* Nimmt 100% der Breite ein */
-    padding: 10px; /* Weniger Padding */
+    max-width: 100%; 
+    padding: 10px; 
   }
 
   .add-event-form h3 {
-    font-size: 16px; /* Noch kleinere Schriftgröße */
+    font-size: 16px; 
   }
 
   .add-event-form label {
-    font-size: 12px; /* Kleinere Label-Schriftgröße */
+    font-size: 12px; 
   }
 
   .add-event-form input,
   .add-event-form select,
   .add-event-form button {
-    font-size: 12px; /* Kleinere Schrift für Inputs und Buttons */
-    padding: 6px; /* Weniger Padding */
+    font-size: 12px; 
+    padding: 6px; 
   }
 
   .add-event-form button {

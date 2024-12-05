@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-height: 100vh; /* Vollbildhöhe */
+  min-height: 100vh;
   padding: 20px;
   background: linear-gradient(
       rgba(255, 255, 255, 0.8),
@@ -15,28 +15,28 @@
 
 /* ----------- Media Queries ----------- */
 
-/* Für Tablets (Breite: bis 768px) */
+/* For Tablets */
 @media (max-width: 768px) {
   .page-container {
-    padding: 15px; /* Weniger Padding für Tablets */
+    padding: 15px; 
     background: linear-gradient(
         rgba(255, 255, 255, 0.9),
         rgba(255, 255, 255, 0.9)
       ),
       url('../../public/images/footballStadium.png') no-repeat center center fixed;
-    background-size: cover; /* Behält das Cover-Layout */
+    background-size: cover; 
   }
 }
 
-/* Für Smartphones (Breite: bis 480px) */
+/* For Smartphones */
 @media (max-width: 480px) {
   .page-container {
-    padding: 10px; /* Noch weniger Padding für kleinere Bildschirme */
+    padding: 10px; 
     background: linear-gradient(
         rgba(255, 255, 255, 1),
         rgba(255, 255, 255, 1)
       ),
       url('../../public/images/footballStadium.png') no-repeat center center;
-    background-size: contain; /* Passt das Hintergrundbild an kleinere Bildschirme an */
+    background-size: contain; 
   }
 }

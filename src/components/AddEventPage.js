@@ -4,7 +4,7 @@ import './AddEventPage.css';
 
 const AddEventPage = ({ addEvent, currentDate }) => {
   return (
-    <div className="page-container"> {/* Klasse hinzugefügt */}
+    <div className="page-container"> {}
       <AddEventForm currentDate={currentDate} addEvent={addEvent} />
     </div>
   );

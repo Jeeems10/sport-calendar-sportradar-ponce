@@ -23,7 +23,7 @@ const AddEventForm = ({ currentDate, addEvent }) => {
     e.preventDefault();
     const newEvent = {
       ...formData,
-      id: `${Date.now()}`, // Unique ID
+      id: `${Date.now()}`,
       homeTeam: { name: formData.homeTeam },
       awayTeam: { name: formData.awayTeam },
     };

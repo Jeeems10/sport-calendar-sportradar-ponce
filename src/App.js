@@ -16,7 +16,7 @@ function App() {
   const addEvent = (newEvent) => {
     const updatedEvents = [...events, { ...newEvent, id: `${events.length}-${newEvent.dateVenue}` }];
     setEvents(updatedEvents);
-    setFilteredEvents(updatedEvents); // Aktualisiere auch gefilterte Events
+    setFilteredEvents(updatedEvents);
   };
 
   return (

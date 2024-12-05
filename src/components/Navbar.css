@@ -1,76 +1,76 @@
-/* ----------- Navbar Hauptstil ----------- */
+
 .navbar {
-  background-color: #002c5f; /* Sportradar Blau */
+  background-color: #002c5f; 
   padding: 10px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
-/* Navigationselemente */
+
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 20px; /* Abstand zwischen den Links */
+  gap: 20px; 
   padding: 0;
   margin: 0;
 }
 
-/* Navigationselemente Styling */
+
 .navbar li {
   font-size: 18px;
-  font-weight: bold; /* Fett für bessere Lesbarkeit */
-  text-transform: uppercase; /* Großbuchstaben für Links */
+  font-weight: bold; 
+  text-transform: uppercase; 
 }
 
-/* Links */
+
 .navbar a {
   color: white;
   text-decoration: none;
-  transition: color 0.3s ease; /* Sanfte Farbänderung */
+  transition: color 0.3s ease; 
 }
 
-/* Hover-Effekt */
+
 .navbar a:hover {
-  text-decoration: underline; /* Unterstreichen beim Hover */
-  color: red; /* Rote Farbe beim Hover */
+  text-decoration: underline; 
+  color: red; 
 }
 
-/* ----------- Responsive Anpassungen ----------- */
-/* Tablets (Breite ≤ 768px) */
+/* ----------- Responsive  ----------- */
+/* Tablets  */
 @media (max-width: 768px) {
   .navbar {
     padding: 10px 15px;
   }
 
   .navbar ul {
-    gap: 15px; /* Weniger Abstand zwischen Links */
+    gap: 15px; 
   }
 
   .navbar li {
-    font-size: 16px; /* Kleinere Schriftgröße */
+    font-size: 16px; 
   }
 }
 
-/* Smartphones (Breite ≤ 480px) */
+/* Smartphones  */
 @media (max-width: 480px) {
   .navbar {
-    flex-direction: column; /* Links untereinander anordnen */
+    flex-direction: column; 
     padding: 10px;
   }
 
   .navbar ul {
     flex-direction: column;
     align-items: center;
-    gap: 10px; /* Weniger Abstand zwischen den Links */
+    gap: 10px; 
   }
 
   .navbar li {
-    font-size: 14px; /* Noch kleinere Schriftgröße */
+    font-size: 14px; 
   }
 
   .navbar a {
-    font-size: 14px; /* Anpassung der Schriftgröße */
+    font-size: 14px; 
   }
 }

@@ -1,18 +1,18 @@
-/* Stil für das Filter-Formular */
+
 .filter-form {
   display: flex;
-  flex-wrap: wrap; /* Eingabefelder umbrechen, wenn kein Platz ist */
+  flex-wrap: wrap; 
   align-items: center;
-  justify-content: center; /* Zentriert die Eingabefelder */
-  gap: 15px; /* Abstand zwischen den Feldern */
-  margin: 20px 0; /* Abstand oberhalb und unterhalb des Formulars */
+  justify-content: center; 
+  gap: 15px; 
+  margin: 20px 0; 
   padding: 15px;
-  background-color: rgba(255, 255, 255, 0.9); /* Halbtransparenter Hintergrund */
-  border-radius: 8px; /* Abgerundete Ecken */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+  background-color: rgba(255, 255, 255, 0.9); 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
-/* Eingabefelder und Buttons */
+
 .filter-form input[type="date"],
 .filter-form select,
 .filter-form button {
@@ -20,23 +20,23 @@
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  min-width: 150px; /* Mindestbreite für Eingabefelder */
+  min-width: 150px; 
 }
 
 /* Button-Stil */
 .filter-form button {
-  background-color: #002c5f; /* Sportradar Blau */
+  background-color: #002c5f; 
   color: white;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Übergangseffekt */
+  transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
 .filter-form button:hover {
-  background-color: #004080; /* Helleres Blau beim Hover */
+  background-color: #004080; 
   color: red;
 }
 
-/* Label-Stil */
+
 .filter-form label {
   display: flex;
   flex-direction: column;
@@ -44,23 +44,23 @@
   margin-bottom: 5px;
   font-size: 14px;
   font-weight: bold;
-  color: #002c5f; /* Sportradar Blau */
+  color: #002c5f; 
 }
 
-/* ----------- Responsive Anpassungen ----------- */
-/* Tablets (Breite ≤ 768px) */
+/* ----------- Responsive  ----------- */
+/* For Tablets */
 @media (max-width: 768px) {
   .filter-form {
-    gap: 10px; /* Reduzierter Abstand zwischen den Feldern */
+    gap: 10px; 
     padding: 10px;
   }
 
   .filter-form input[type="date"],
   .filter-form select,
   .filter-form button {
-    font-size: 12px; /* Kleinere Schriftgröße */
-    padding: 8px; /* Weniger Innenabstand */
-    min-width: 120px; /* Reduzierte Mindestbreite */
+    font-size: 12px; 
+    padding: 8px; 
+    min-width: 120px; 
   }
 
   .filter-form label {
@@ -68,20 +68,20 @@
   }
 }
 
-/* Smartphones (Breite ≤ 480px) */
+/* Smartphones  */
 @media (max-width: 480px) {
   .filter-form {
-    flex-direction: column; /* Felder untereinander anordnen */
-    gap: 8px; /* Weniger Abstand zwischen den Feldern */
+    flex-direction: column; 
+    gap: 8px; 
     padding: 8px;
   }
 
   .filter-form input[type="date"],
   .filter-form select,
   .filter-form button {
-    font-size: 10px; /* Noch kleinere Schriftgröße */
-    padding: 6px; /* Kompakteres Design */
-    min-width: 100px; /* Kleinere Mindestbreite */
+    font-size: 10px; 
+    padding: 6px; 
+    min-width: 100px; 
   }
 
   .filter-form label {

@@ -1,31 +1,31 @@
-/* ----------- Hauptlayout für den Kalender ----------- */
+/* ----------- Mainlayout for the Calender ----------- */
 .calendar {
   display: grid;
-  grid-template-columns: repeat(7, 1fr); /* Standard: 7 Spalten */
+  grid-template-columns: repeat(7, 1fr);
   gap: 15px;
   padding: 20px;
 }
 
 .calendar-day {
   border: 1px solid #ccc;
-  padding: 10px; /* Anpassung für mehr Inhalt */
-  min-width: 100px; /* Breite für Desktop */
-  min-height: 120px; /* Höhe für Desktop */
+  padding: 10px; 
+  min-width: 100px; 
+  min-height: 120px; 
   text-align: center;
   display: flex;
-  flex-direction: column; /* Vertikales Layout */
+  flex-direction: column; 
   align-items: center;
-  justify-content: center; /* Inhalte zentrieren */
+  justify-content: center; 
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.8); /* Halbtransparentes Weiß */
-  border-radius: 5px; /* Abgerundete Ecken */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+  background-color: rgba(255, 255, 255, 0.8); 
+  border-radius: 5px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
   position: relative;
-  overflow: hidden; /* Verhindert Überlauf */
+  overflow: hidden; 
 }
 
 .calendar-day.event-day {
-  background-color: rgba(0, 44, 95, 0.8); /* Blau mit Transparenz */
+  background-color: rgba(0, 44, 95, 0.8); 
   color: white;
   border: none;
 }
@@ -33,16 +33,16 @@
 .weekday {
   font-size: 14px;
   font-weight: bold;
-  margin-bottom: 5px; /* Abstand zum Datum */
+  margin-bottom: 5px; 
 }
 
 .date {
   font-size: 12px;
-  margin-bottom: 10px; /* Abstand zu den Event-Details */
+  margin-bottom: 10px; 
 }
 
 .event-list {
-  list-style-type: none; /* Entfernt Standard-Punkte */
+  list-style-type: none; 
   padding: 0;
   margin: 0;
   font-size: 10px;
@@ -50,12 +50,12 @@
 }
 
 .event-item {
-  margin-bottom: 5px; /* Abstand zwischen den Events */
+  margin-bottom: 5px; 
   color: white;
   font-weight: bold;
 }
 
-/* ----------- Hintergrund mit Transparenz ----------- */
+/* ----------- Background Transperance ----------- */
 .calendar-container {
   display: flex;
   flex-direction: column;
@@ -67,11 +67,11 @@
     url('../../public/images/footballStadium.png') no-repeat center center fixed;
   background-size: cover;
   
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Leichter Schatten */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 20px;
 }
 
-/* ----------- Header und Navigation ----------- */
+/* ----------- Header and Navigation ----------- */
 .calendar-header {
   display: flex;
   align-items: center;
@@ -102,22 +102,22 @@
   color: red;
 }
 
-/* ----------- Event Details für Tage mit Spielen ----------- */
+/* ----------- Event Details for Days with Games ----------- */
 .event-details {
   margin-top: 10px;
   padding: 5px;
   font-size: 10px;
   color: #444;
-  background-color: rgba(255, 255, 255, 0.8); /* Halbtransparentes Weiß */
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 3px;
   text-align: left;
 }
 
 /* ----------- Responsiveness ----------- */
-/* Anpassungen für Tablets (Breite ≤ 768px) */
+/* For Tablets */
 @media (max-width: 768px) {
   .calendar {
-    grid-template-columns: repeat(4, 1fr); /* 4 Spalten */
+    grid-template-columns: repeat(4, 1fr); 
   }
 
   .calendar-day {
@@ -147,10 +147,10 @@
   }
 }
 
-/* Anpassungen für Smartphones (Breite ≤ 480px) */
+/* For Smartphones */
 @media (max-width: 480px) {
   .calendar {
-    grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 10px;
   }
 
