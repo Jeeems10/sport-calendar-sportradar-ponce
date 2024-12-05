@@ -3,24 +3,32 @@ import './AddEventForm.css'
 
 
 const AddEventForm = ({ currentDate, addEvent }) => {
+  // State to manage form data
   const [formData, setFormData] = useState({
-    dateVenue: currentDate.toISOString().split('T')[0],
+    dateVenue: currentDate.toISOString().split('T')[0], // Default to today's date
     timeVenueUTC: '12:00:00',
     sport: '',
     homeTeam: '',
     awayTeam: '',
   });
 
+  /* Handle input changes in the form.
+  Dynamically updates the form data state based on user input. */
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value,
+      [name]: value, // Update the specific field
     }));
   };
 
+ /*  Handle form submission.
+  Validates and structures the new event data, then triggers the callback. */
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Construct the new event object
     const newEvent = {
       ...formData,
       id: `${Date.now()}`,
@@ -28,6 +36,7 @@ const AddEventForm = ({ currentDate, addEvent }) => {
       awayTeam: { name: formData.awayTeam },
     };
     addEvent(newEvent);
+    // Reset the form fields
     setFormData({
       dateVenue: currentDate.toISOString().split('T')[0],
       timeVenueUTC: '12:00:00',

@@ -2,22 +2,26 @@ import React, { useState } from "react";
 import './Filter.css'
 
 const Filters = ({ events = [], setFilteredEvents }) => {
+  // State to manage filter criteria
   const [filterCriteria, setFilterCriteria] = useState({
     sport: "",
     dateFrom: "",
     dateTo: "",
   });
 
+  /*Applies the selected filters to the events and updates the filtered events list.*/
   const handleFilter = () => {
     console.log("Applying filter with criteria:", filterCriteria);
     console.log("Original events:", events);
 
+    // Validate the events array
     if (!events || !Array.isArray(events)) {
       console.error("Events are undefined or not an array");
-      setFilteredEvents([]);
+      setFilteredEvents([]);// Reset filtered events if invalid
       return;
     }
 
+    // Filter events based on criteria
     const filtered = events.filter((event) => {
       if (!event.dateVenue || !event.sport) {
         console.error("Invalid event:", event);
@@ -32,7 +36,9 @@ const Filters = ({ events = [], setFilteredEvents }) => {
         ? new Date(`${filterCriteria.dateTo}T23:59:59`)
         : null;
 
+       // Check if the event matches the selected sport
       const matchesSport = !filterCriteria.sport || event.sport.toLowerCase() === filterCriteria.sport.toLowerCase();
+      // Check if the event falls within the date range
       const matchesFromDate = !fromDate || eventDate >= fromDate;
       const matchesToDate = !toDate || eventDate <= toDate;
 
@@ -47,7 +53,7 @@ const Filters = ({ events = [], setFilteredEvents }) => {
     });
 
     console.log("Filtered events:", filtered);
-    setFilteredEvents(filtered);
+    setFilteredEvents(filtered); // Update filtered events
   };
 
   return (
@@ -68,6 +74,8 @@ const Filters = ({ events = [], setFilteredEvents }) => {
           <option value="Cricket">Cricket</option>
         </select>
       </label>
+
+      {/* Filter by start date */}
       <label>
         Date From:
         <input
@@ -78,6 +86,8 @@ const Filters = ({ events = [], setFilteredEvents }) => {
           }
         />
       </label>
+
+      {/* Filter by end date */}
       <label>
         Date To:
         <input
@@ -88,6 +98,8 @@ const Filters = ({ events = [], setFilteredEvents }) => {
           }
         />
       </label>
+
+      {/* Apply filter button */}
       <button onClick={handleFilter}>Apply Filter</button>
     </div>
   );
