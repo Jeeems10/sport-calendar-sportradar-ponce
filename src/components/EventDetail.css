@@ -70,6 +70,10 @@
   .event-detail-container h2 {
     font-size: 20px;
   }
+
+  .event-detail-grid {
+    gap: 15px;
+  }
 }
 
 /* ----------- Anpassungen für Smartphones ----------- */
@@ -89,5 +93,9 @@
 
   .event-detail-container h2 {
     font-size: 16px;
+  }
+
+  .event-detail-grid {
+    gap: 10px;
   }
 }

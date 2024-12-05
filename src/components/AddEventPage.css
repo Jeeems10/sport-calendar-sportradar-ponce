@@ -12,3 +12,31 @@
     url('../../public/images/footballStadium.png') no-repeat center center fixed;
   background-size: cover;
 }
+
+/* ----------- Media Queries ----------- */
+
+/* Für Tablets (Breite: bis 768px) */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 15px; /* Weniger Padding für Tablets */
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.9)
+      ),
+      url('../../public/images/footballStadium.png') no-repeat center center fixed;
+    background-size: cover; /* Behält das Cover-Layout */
+  }
+}
+
+/* Für Smartphones (Breite: bis 480px) */
+@media (max-width: 480px) {
+  .page-container {
+    padding: 10px; /* Noch weniger Padding für kleinere Bildschirme */
+    background: linear-gradient(
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 1)
+      ),
+      url('../../public/images/footballStadium.png') no-repeat center center;
+    background-size: contain; /* Passt das Hintergrundbild an kleinere Bildschirme an */
+  }
+}

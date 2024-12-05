@@ -49,3 +49,52 @@
   background-color: #004080;
   color: red;
 }
+
+/* ----------- Media Queries ----------- */
+
+/* Für Tablets (Breite: bis 768px) */
+@media (max-width: 768px) {
+  .add-event-form {
+    max-width: 90%; /* Nimmt 90% des Bildschirms ein */
+    padding: 15px; /* Weniger Padding */
+  }
+
+  .add-event-form h3 {
+    font-size: 18px; /* Kleinere Schriftgröße */
+  }
+
+  .add-event-form input,
+  .add-event-form select,
+  .add-event-form button {
+    font-size: 13px; /* Kleinere Schrift für Inputs und Buttons */
+    padding: 8px;
+  }
+}
+
+/* Für Smartphones (Breite: bis 480px) */
+@media (max-width: 480px) {
+  .add-event-form {
+    max-width: 100%; /* Nimmt 100% der Breite ein */
+    padding: 10px; /* Weniger Padding */
+  }
+
+  .add-event-form h3 {
+    font-size: 16px; /* Noch kleinere Schriftgröße */
+  }
+
+  .add-event-form label {
+    font-size: 12px; /* Kleinere Label-Schriftgröße */
+  }
+
+  .add-event-form input,
+  .add-event-form select,
+  .add-event-form button {
+    font-size: 12px; /* Kleinere Schrift für Inputs und Buttons */
+    padding: 6px; /* Weniger Padding */
+  }
+
+  .add-event-form button {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
