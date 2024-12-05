@@ -52,6 +52,6 @@ Ensure you have the following installed on your system:
 
 5. To build the application for production:
 
-```bash
- npm run build
-```
+   ```bash
+   npm run build
+   ```
